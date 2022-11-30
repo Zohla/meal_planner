@@ -18,8 +18,12 @@ public class PlannerController {
 
 
   @GetMapping("/")
-  public String mealPlan(@RequestParam(defaultValue = "0", value = "id") int id, Model model) {
+  public String mealPlan(@RequestParam(defaultValue = "-1", value = "id") int id, Model model) {
+
     model.addAttribute("mealPlan", mealPlanService.generateWeeklyMenu());
+
+    Recipe recipe = id != -1 ? mealPlanService.getRecipeById(id) : null;
+    model.addAttribute("recipe", recipe);
 
     return "meal_plan_view";
   }

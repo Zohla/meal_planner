@@ -18,43 +18,46 @@
     <tbody>
     <tr>
         <td>Monday</td>
-        <td><a th:href="${'/recipe?id=' + mealPlan.get(0).id}"
+        <td><a th:href="${'/?id=' + mealPlan.get(0).id}"
                th:text="${mealPlan.get(0).name}"/></td>
     </tr>
     <tr>
         <td>Tuesday</td>
-        <td><a th:href="${'/recipe?id=' + mealPlan.get(1).id}"
+        <td><a th:href="${'/?id=' + mealPlan.get(1).id}"
                th:text="${mealPlan.get(1).name}"/></td>
     </tr>
     <tr>
         <td>Wednesday</td>
-        <td><a th:href="${'/recipe?id=' + mealPlan.get(2).id}"
+        <td><a th:href="${'/?id=' + mealPlan.get(2).id}"
                th:text="${mealPlan.get(2).name}"/></td>
     </tr>
     <tr>
         <td>Thursday</td>
-        <td><a th:href="${'/recipe?id=' + mealPlan.get(3).id}"
+        <td><a th:href="${'/?id=' + mealPlan.get(3).id}"
                th:text="${mealPlan.get(3).name}"/></td>
     </tr>
     <tr>
         <td>Friday</td>
-        <td><a th:href="${'/recipe?id=' + mealPlan.get(4).id}"
+        <td><a th:href="${'/?id=' + mealPlan.get(4).id}"
                th:text="${mealPlan.get(4).name}"/></td>
     </tr>
     <tr>
         <td>Saturday</td>
-        <td><a th:href="${'/recipe?id=' + mealPlan.get(5).id}"
+        <td><a th:href="${'/?id=' + mealPlan.get(5).id}"
                th:text="${mealPlan.get(5).name}"/></td>
     </tr>
     <tr>
         <td>Sunday</td>
-        <td><a th:href="${'/recipe?id=' + mealPlan.get(6).id}"
+        <td><a th:href="${'/?id=' + mealPlan.get(6).id}"
                th:text="${mealPlan.get(6).name}"/></td>
     </tr>
     </tbody>
 </table>
 
-<div if="${}"
+<div >
+    <h3 th:if="${recipe != null}" th:text="${recipe.getIngredients()}"></h3>
+    <h3 th:if="${recipe != null}" th:text="${recipe.getInstructions()}"></h3>
+</div>
 
 </body>
 </html>
