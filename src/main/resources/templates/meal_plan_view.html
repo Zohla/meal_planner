@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{style.css}"/>
+    <title>Meal plan</title>
+</head>
+<body>
+<h2>This is what you're having for dinner this week!</h2>
+
+<table class="meal-plan">
+    <thead>
+    <tr>
+        <th>Day</th>
+        <th>Recipe</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Monday</td>
+        <td><a th:href="${'/recipe?id=' + mealPlan.get(0).id}"
+               th:text="${mealPlan.get(0).name}"/></td>
+    </tr>
+    <tr>
+        <td>Tuesday</td>
+        <td><a th:href="${'/recipe?id=' + mealPlan.get(1).id}"
+               th:text="${mealPlan.get(1).name}"/></td>
+    </tr>
+    <tr>
+        <td>Wednesday</td>
+        <td><a th:href="${'/recipe?id=' + mealPlan.get(2).id}"
+               th:text="${mealPlan.get(2).name}"/></td>
+    </tr>
+    <tr>
+        <td>Thursday</td>
+        <td><a th:href="${'/recipe?id=' + mealPlan.get(3).id}"
+               th:text="${mealPlan.get(3).name}"/></td>
+    </tr>
+    <tr>
+        <td>Friday</td>
+        <td><a th:href="${'/recipe?id=' + mealPlan.get(4).id}"
+               th:text="${mealPlan.get(4).name}"/></td>
+    </tr>
+    <tr>
+        <td>Saturday</td>
+        <td><a th:href="${'/recipe?id=' + mealPlan.get(5).id}"
+               th:text="${mealPlan.get(5).name}"/></td>
+    </tr>
+    <tr>
+        <td>Sunday</td>
+        <td><a th:href="${'/recipe?id=' + mealPlan.get(6).id}"
+               th:text="${mealPlan.get(6).name}"/></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
