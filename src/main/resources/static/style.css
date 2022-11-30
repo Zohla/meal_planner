@@ -440,10 +440,30 @@ select {
     font-style: var(--accent-font);
 }
 
-.meal-plan {
-    font-size: large;
-    font-style: var(--accent-font);
+.meal-plan-view {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+
+    color: var(--accent-color-dark);
+    font-family: var(--accent-font);
+    font-size: 120%;
+    font-weight: normal;
+}
+
+.meal-plan-table {
     max-width: 40%;
+}
+
+.recipe-details {
+    max-width: 50%;
+}
+
+.ingredients-list {
+    list-style: none;
 }
 
 

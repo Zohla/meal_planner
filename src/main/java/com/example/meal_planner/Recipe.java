@@ -33,6 +33,7 @@ public class Recipe {
            Add all ingredients to bowl
            Mix well
            Add to 30 cm round baking tray
-           Bake in oven at 200 deg C for 40 min.""";
+           Bake in oven at 200 deg C for 40 min.
+           """;
   }
 }
