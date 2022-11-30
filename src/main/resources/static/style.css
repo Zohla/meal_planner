@@ -79,74 +79,6 @@ header img {
     object-fit: cover;
 }
 
-/* SITE NAVIGATION MENU */
-.site-nav {
-    position: sticky;
-    top: 0;
-    background-color: var(--nav-background-color);
-    overflow: hidden;
-    padding-top: 30px;
-    padding-bottom: 20px;
-    text-align: center;
-}
-
-.site-nav ul {
-    margin: 0;
-    padding: 0;
-}
-
-.site-nav li {
-    list-style: none;
-    display: inline-block;
-}
-
-.site-nav a {
-    text-decoration: none;
-    padding: 20px;
-    color: var(--nav-link-color);
-    font-family: var(--accent-font);
-    font-size: small;
-}
-
-.site-nav a:hover {
-    color: var(--accent-color-dark)
-}
-
-.site-nav a:active {
-    color: var(--accent-color-dark)
-}
-
-/* TABLE OF CONTENTS */
-.toc {
-    float: left;
-    width: 20%;
-    overflow: hidden;
-    padding: 10px 15px;
-    text-align: left;
-}
-
-.drop-down-title {
-    font-family: var(--accent-font);
-    color: var(--accent-color-dark);
-    padding: 0;
-    margin: 0;
-}
-
-.toc a {
-    text-decoration: none;
-    font-family: var(--accent-font);
-    font-size: small;
-}
-
-.toc ul {
-    margin: 0;
-    padding: 0;
-}
-
-.toc li {
-    list-style: none;
-}
-
 /* HEADINGS */
 
 h1 {
@@ -245,53 +177,6 @@ input:required:invalid {
 
 /* End required */
 
-p.invalidMessage {
-    font-size: larger;
-    color: var(--error-color);
-}
-
-pre {
-    white-space: pre-line;
-    position: relative;
-}
-
-code {
-    font-family: var(--code-font);
-    color: var(--code-color);
-    font-size: inherit;
-}
-
-/* Code in text */
-p > code,
-li > code,
-dd > code,
-td > code {
-    word-wrap: break-word;
-    box-decoration-break: clone;
-    padding: .1rem .3rem .2rem;
-    border-radius: .2rem;
-}
-
-/* Block code */
-pre code {
-    color: var(--accent-color-dark);
-    display: block;
-    background: gainsboro;
-    -webkit-overflow-scrolling: auto;
-    overflow-x: scroll;
-    max-width: 100%;
-    min-width: 80px;
-    padding: 0 15px 15px 15px;
-}
-
-details {
-    margin: 20px 0;
-}
-
-details ul,
-.details-children {
-    margin-left: 15px;
-}
 
 /* FORM STYLES */
 form {
@@ -386,60 +271,13 @@ select {
 }
 
 /* CLASSES */
-.important-box {
-    text-align: center;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-    background-color: var(--important-color);
-    padding: 10px;
-}
-
 .full-width-image {
     max-width: 100%;
     max-height: 100%;
     /*object-fit: cover;*/
 }
 
-.image-caption {
-    font-size: small;
-    color: var(--light-text-color);
-}
-
-/* IMAGE OVERLAY */
-.image-overlay {
-    position: relative;
-}
-
-.image-overlay img {
-    display: block;
-}
-
-.overlay-text {
-    /* Absolute position is relative to the nearest parent relative position */
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    color: #FFF;
-    background-color: rgba(0, 0, 0, .65);
-    padding: 15px 25px;
-}
-
-.display-sum {
-    font-size: x-large;
-    font-style: var(--accent-font);
-    color: var(--accent-color-dark);
-
-}
-
-.book-details {
-    font-size: large;
-    font-style: var(--accent-font);
-}
-
+/* MEAL PLANNER */
 .meal-plan-view {
     display: flex;
     flex-wrap: wrap;
@@ -450,11 +288,11 @@ select {
 
     color: var(--accent-color-dark);
     font-family: var(--accent-font);
-    font-size: 120%;
     font-weight: normal;
 }
 
 .meal-plan-table {
+    font-size: 120%;
     max-width: 40%;
 }
 
@@ -462,8 +300,11 @@ select {
     max-width: 50%;
 }
 
-.ingredients-list {
+.ingredients-list li {
     list-style: none;
+}
+.ingredients-list ul {
+    margin-left: -13px;
 }
 
 
@@ -503,7 +344,6 @@ table {
     border-spacing: 0;
     border-collapse: collapse;
     width: 70%;
-    font-family: var(--body-font);
     /*table-layout: fixed;*/
 }
 
@@ -548,149 +388,4 @@ table thead th:not(:nth-child(1)) {
     text-align: center;
     vertical-align: top;
     width: 20%;
-}
-
-/* TYPOGRAPHY */
-.italic {
-    font-style: italic;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.underline {
-    text-decoration: underline;
-}
-
-
-/* Flexbox items  */
-.box {
-    display: flex;
-    flex-wrap: wrap; /* dynamically wrap elements */
-    align-items: center; /* opposite direction of flex */
-    justify-content: center;
-    width: 100%;
-    margin: auto;
-    border: 1px solid black;
-    box-sizing: border-box;
-}
-
-.outer {
-    margin-top: 10px;
-    padding: 5px;
-    border: 1px solid black;
-}
-.inner {
-    width: 28%;
-}
-
-
-#ex1 {
-    height: 100px;
-    flex-direction: column;
-}
-
-#ex2 {
-    height: 50px;
-    background-color: #bfd9d9;
-}
-
-#two {
-    width: 20%;
-}
-
-#three {
-    margin-left: 20%;
-}
-
-#ex3a {
-    padding: 0;
-}
-
-#ex3a .inner {
-    justify-content: left;
-    min-width: 33.33%;
-    padding: 0;
-}
-
-#ex3a .last-item {
-    width: 100%;
-}
-
-.outer-3c {
-    display: flex;
-    flex-wrap: wrap; /* dynamically wrap elements */
-    align-items: center; /* opposite direction of flex */
-    flex-direction: column;
-    width: 100%;
-    height: 200px;
-    margin-top: 10px;
-    border: 1px solid black;
-    box-sizing: border-box;
-}
-
-.inner-3c {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 33.33%;
-    min-width: 25%;
-    border: 1px solid black;
-    box-sizing: border-box;
-}
-
-/* Grid items */
-.wrapper {
-    display: grid;
-    border: 1px solid black;
-}
-
-.grid-a {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-}
-
-.grid-b {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    height: 200px;
-}
-
-.cell {
-    border: 1px solid black;
-}
-
-.ten-a {
-    grid-column: 1 / 4;
-    grid-row: 4;
-}
-
-.ten-b {
-    grid-column: 4;
-    grid-row: 1 / 4;
-}
-
-
-/* FOOTER STYLING */
-
-article footer {
-    display: none;
-}
-
-footer {
-    border-top: 1px solid var(--accent-color-dark);
-    padding-top: 10px;
-    padding-bottom: 50px;
-    text-align: center;
-    font-size: small;
-    color: var(--light-text-color);
-}
-
-.site-nav {
-    background-color: var(--cream-color);
-    padding-bottom: 25px;
-}
-
-.site-nav a {
-    color: var(--nav-background-color)
 }

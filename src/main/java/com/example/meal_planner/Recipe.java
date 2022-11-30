@@ -31,8 +31,11 @@ public class Recipe {
   public String getInstructions() {
     return """
            Add all ingredients to bowl
+           
            Mix well
+           
            Add to 30 cm round baking tray
+           
            Bake in oven at 200 deg C for 40 min.
            """;
   }
