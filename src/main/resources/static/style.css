@@ -280,20 +280,25 @@ select {
 /* MEAL PLANNER */
 .meal-plan-view {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     width: 100%;
+    flex-wrap:nowrap;
+    justify-content: space-between;
     margin: auto;
     box-sizing: border-box;
-
     color: var(--accent-color-dark);
     font-family: var(--accent-font);
     font-weight: normal;
 }
+.plan-and-rand-btn-container{
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+}
 
 .meal-plan-table {
     font-size: 120%;
-    max-width: 40%;
+    max-width: 100%;
+
 }
 
 .recipe-details {
@@ -388,4 +393,20 @@ table thead th:not(:nth-child(1)) {
     text-align: center;
     vertical-align: top;
     width: 20%;
+}
+
+.getRandom-form{
+    background-color: var(--cream-color);
+    display: flex;
+    padding: 30px 30px 30px 0;
+}
+.getRandom-form button{
+    background-color: var(--accent-color-xlight);
+    color: var(--accent-color-dark);
+    border-width: 1px;
+    padding: .5em;
+}
+.getRandom-form button:hover{
+    background-color: var(--accent-color-light);
+    color: var(--accent-color-medium);
 }
