@@ -28,19 +28,17 @@ public class MealPlanService {
 
   // Method to generate list of 7 random recipes
   public HashMap<Integer, Recipe> generateWeeklyMenu() {
-    // TODO: Logic to generate random list of 7 unique elements
-//    return recipes.subList(0, 7);
+
     HashMap<Integer, Recipe> thisWeek = new HashMap<>();
 
-
       Random random = new Random();
-      int[]numbers = new int[7] ;
-      for (int i=0;i<numbers.length;i++) {
+      int[]numbers = new int[7];
+      for (int i = 0 ; i < numbers.length ; i++) {
         int randIndex = random.nextInt(idList.size());
         if(isDublicate(numbers,randIndex) )
-          i-- ;
+          i--;
         else
-          numbers[i] = idList.get(randIndex) ;
+          numbers[i] = idList.get(randIndex);
       }
       for (int i=0;i<numbers.length;i++)
       {
@@ -48,8 +46,8 @@ public class MealPlanService {
       }
 
       return thisWeek ;
-      //return recipes.subList(0, 7);
     }
+
     public boolean isDublicate(int[]numbers, int newNumber)
     {
       for(int i=0;i<numbers.length;i++) {
@@ -107,6 +105,18 @@ public class MealPlanService {
   // Method to get recipe by id
   public Recipe getRecipeById(int id) {
     return recipes.get(id);
+  }
+
+  // Pagination
+  public List<Integer> getIdPageSubList(int page, int pageSize) {
+    int from = Math.max(0, page * pageSize);
+    int to = Math.min(idList.size(), (page + 1) * pageSize);
+
+    return idList.subList(from, to);
+  }
+
+  public int numberOfPages(int pageSize) {
+    return (int) Math.ceil((double) recipes.size() / pageSize);
   }
 
 }

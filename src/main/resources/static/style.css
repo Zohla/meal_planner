@@ -312,6 +312,9 @@ select {
     margin-left: -13px;
 }
 
+.recipes-list {
+    max-width: 40%;
+}
 
 /* Pagination links */
 
