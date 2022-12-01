@@ -277,6 +277,11 @@ select {
     /*object-fit: cover;*/
 }
 
+/*.meal-plan-view,
+.plan-and-rand-btn-container {
+    display: flex;
+    width: 100%;
+}*/
 /* MEAL PLANNER */
 .meal-plan-view {
     display: flex;

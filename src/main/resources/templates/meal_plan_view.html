@@ -7,8 +7,8 @@
 </head>
 <body>
 <h2>This is what you're having for dinner this week!</h2>
-
 <div class="meal-plan-view">
+<div class="plan-and-rand-btn-container">
     <table class="meal-plan-table">
         <thead>
         <tr>
@@ -20,25 +20,27 @@
         <tr th:each="instance, iterStat : ${mealPlan}">
             <td th:text="${days[iterStat.index]}">DAY</td>
             <td><a th:href="${'/?id=' + instance.key}"
-            th:text="${instance.value.name}"/></td>
+                   th:text="${instance.value.name}"/></td>
         </tr>
         </tbody>
     </table>
-        <form action="/" method="get">
-            <button type="submit">Get random meals</button>
-        </form>
-    <div th:if="${recipe != null}" class="recipe-details">
-        <h3>Ingredients</h3>
-        <div class="ingredients-list">
-            <ul th:each="i : ${recipe.getIngredients()}">
-                <li th:text="|${i.name}: ${i.amount} ${i.unit}|"></li>
-            </ul>
-        </div>
+    <form action="/" method="get" class="getRandom-form button">
+        <button type="submit">Get random meals</button>
+    </form>
 
-        <h3>Instructions</h3>
-        <p class="recipe-instructions" th:if="${recipe != null}"
-           th:text="${recipe.getInstructions()}"></p>
+</div>
+<div th:if="${recipe != null}" class="recipe-details">
+    <h3>Ingredients</h3>
+    <div class="ingredients-list">
+        <ul th:each="i : ${recipe.getIngredients()}">
+            <li th:text="|${i.name}: ${i.amount} ${i.unit}|"></li>
+        </ul>
     </div>
+
+    <h3>Instructions</h3>
+    <p class="recipe-instructions" th:if="${recipe != null}"
+       th:text="${recipe.getInstructions()}"></p>
+</div>
 </div>
 </body>
 </html>
