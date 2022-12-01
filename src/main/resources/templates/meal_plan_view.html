@@ -6,41 +6,59 @@
     <title>Meal plan</title>
 </head>
 <body>
+<nav class="site-nav">
+    <ul class="floats">
+        <li><a href="/">Meal plan</a></li>
+        <li><a href="/recipes">Recipes</a></li>
+    </ul>
+</nav>
+<div class="banner-image">
+<img alt="Bowls of food"
+     src="/images/food_banner.png">
+</div>
+<p class="image-caption"><em>Photo by <a
+        href="https://unsplash.com/@victoriakosmo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Victoria
+    Shes</a> on <a
+        href="https://unsplash.com/collections/4625880/dinner?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></em>
+</p>
+
+
 <h2>This is what you're having for dinner this week!</h2>
 <div class="meal-plan-view">
-<div class="plan-and-rand-btn-container">
-    <table class="meal-plan-table">
-        <thead>
-        <tr>
-            <th>Day</th>
-            <th>Recipe</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="instance, iterStat : ${mealPlan}">
-            <td th:text="${days[iterStat.index]}">DAY</td>
-            <td><a th:href="${'/?id=' + instance.key}"
-                   th:text="${instance.value.name}"/></td>
-        </tr>
-        </tbody>
-    </table>
-    <form action="/" method="get" class="getRandom-form button">
-        <button type="submit">Get random meals</button>
-    </form>
+    <div class="plan-and-rand-btn-container">
+        <table class="meal-plan-table">
+            <thead>
+            <tr>
+                <th>Day</th>
+                <th>Recipe</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="instance, iterStat : ${mealPlan}">
+                <td th:text="${days[iterStat.index]}">DAY</td>
+                <td><a th:href="${'/?id=' + instance.key}"
+                       th:text="${instance.value.name}"/></td>
+            </tr>
+            </tbody>
+        </table>
+        <form action="/" class="getRandom-form button" method="get">
+            <button type="submit">Get random meals</button>
+        </form>
 
-</div>
-<div th:if="${recipe != null}" class="recipe-details">
-    <h3>Ingredients</h3>
-    <div class="ingredients-list">
-        <ul th:each="i : ${recipe.getIngredients()}">
-            <li th:text="|${i.name}: ${i.amount} ${i.unit}|"></li>
-        </ul>
     </div>
+    <div class="recipe-details" th:if="${recipe != null}">
+        <h3 th:text="${recipe.name}"></h3>
+        <h4>Ingredients</h4>
+        <div class="ingredients-list">
+            <ul th:each="i : ${recipe.getIngredients()}">
+                <li th:text="|${i.name}: ${i.amount} ${i.unit}|"></li>
+            </ul>
+        </div>
 
-    <h3>Instructions</h3>
-    <p class="recipe-instructions" th:if="${recipe != null}"
-       th:text="${recipe.getInstructions()}"></p>
-</div>
+        <h4>Instructions</h4>
+        <p class="recipe-instructions" th:if="${recipe != null}"
+           th:text="${recipe.getInstructions()}"></p>
+    </div>
 </div>
 </body>
 </html>

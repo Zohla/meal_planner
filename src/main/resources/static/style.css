@@ -79,6 +79,13 @@ header img {
     object-fit: cover;
 }
 
+/*.banner-image {*/
+/*    width: 100%;*/
+/*    !*background-image: url(http://s30.postimg.org/x0ne0p5wx/bootsrap.png);*!*/
+/*    height: 300px;*/
+/*    background-position: center;*/
+/*}*/
+
 /* HEADINGS */
 
 h1 {
@@ -113,6 +120,44 @@ h4 {
     font-size: 110%;
     font-weight: normal;
 }
+
+/* SITE NAVIGATION MENU */
+.site-nav {
+    position: sticky;
+    top: 0;
+    background-color: var(--nav-background-color);
+    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.site-nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav li {
+    list-style: none;
+    display: inline-block;
+}
+
+.site-nav a {
+    text-decoration: none;
+    padding: 20px;
+    color: var(--nav-link-color);
+    font-family: var(--accent-font);
+    font-size: small;
+}
+
+.site-nav a:hover {
+    color: var(--accent-color-dark)
+}
+
+.site-nav a:active {
+    color: var(--accent-color-dark)
+}
+
 
 /* SECTIONS */
 p {
@@ -318,7 +363,7 @@ select {
 }
 
 .recipes-list {
-    max-width: 40%;
+    max-width: 35%;
 }
 
 /* Pagination links */
@@ -327,7 +372,7 @@ select {
     display: flex;
     flex-wrap: wrap; /* dynamically wrap elements */
     align-items: center; /* opposite direction of flex */
-    justify-content: center;
+    justify-content: left;
     width: 100%;
     margin: auto;
     box-sizing: border-box;
