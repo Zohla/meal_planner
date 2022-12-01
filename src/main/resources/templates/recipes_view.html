@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{style.css}"/>
+    <title>Recipe database</title>
+</head>
+<body>
+
+<h2>Recipes</h2>
+
+
+<article>
+    <table class="recipes-list">
+        <thead>
+        <tr>
+            <th class="col-name">Recipes</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="id : ${ids}">
+            <td> <a th:href="${'/recipe?id=' + id}" th:text="${recipes.get(id).name}"/> </td>
+            </a>
+        </tr>
+
+        </tbody>
+    </table>
+</article>
+
+
+<br><br>
+
+<div class="pagination">
+    <a th:href="('/recipes?page=' + (${currentPage} - 1))"
+       th:if="${currentPage > 0}">&laquo;</a>
+
+    <div th:each="i: ${#numbers.sequence(0, numberOfPages - 1)}">
+
+        <a th:href="'/recipes?page=' + ${i}"
+           th:if="${i != currentPage}"
+           th:text="${i}"></a>
+
+        <a class="active" href="#"
+           th:if="${i == currentPage}"
+           th:text="${i}"></a>
+    </div>
+
+    <a th:href="('/recipes?page=' + (${currentPage} + 1))"
+       th:if="${currentPage < (numberOfPages - 1)}">&raquo;</a>
+</div>
+
+</body>
+</html>
