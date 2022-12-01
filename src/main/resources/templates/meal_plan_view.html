@@ -9,54 +9,56 @@
 <h2>This is what you're having for dinner this week!</h2>
 
 <div class="meal-plan-view">
-    <table class="meal-plan-table">
-        <thead>
-        <tr>
-            <th>Day</th>
-            <th>Recipe</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>MONDAY</td>
-            <td><a th:href="${'/?id=' + 1}"
-                   th:text="${mealPlan.get(1).name}"/></td>
-        </tr>
-        <tr>
-            <td>TUESDAY</td>
-            <td><a th:href="${'/?id=' + 2}"
-                   th:text="${mealPlan.get(2).name}"/></td>
-        </tr>
-        <tr>
-            <td>WEDNESDAY</td>
-            <td><a th:href="${'/?id=' + 3}"
-                   th:text="${mealPlan.get(3).name}"/></td>
-        </tr>
-        <tr>
-            <td>THURSDAY</td>
-            <td><a th:href="${'/?id=' + 4}"
-                   th:text="${mealPlan.get(4).name}"/></td>
-        </tr>
-        <tr>
-            <td>FRIDAY</td>
-            <td><a th:href="${'/?id=' + 5}"
-                   th:text="${mealPlan.get(5).name}"/></td>
-        </tr>
-        <tr>
-            <td>SATURDAY</td>
-            <td><a th:href="${'/?id=' + 6}"
-                   th:text="${mealPlan.get(6).name}"/></td>
-        </tr>
-        <tr>
-            <td>SUNDAY</td>
-            <td><a th:href="${'/?id=' + 7}"
-                   th:text="${mealPlan.get(7).name}"/></td>
-        </tr>
-        </tbody>
-    </table>
-        <form action="/" method="get">
-            <button type="submit">Get random meals</button>
-        </form>
+    <div class="plan-and-rand-btn-container">
+        <table class="meal-plan-table">
+            <thead>
+            <tr>
+                <th>Day</th>
+                <th>Recipe</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>MONDAY</td>
+                <td><a th:href="${'/?id=' + 1}"
+                       th:text="${mealPlan.get(1).name}"/></td>
+            </tr>
+            <tr>
+                <td>TUESDAY</td>
+                <td><a th:href="${'/?id=' + 2}"
+                       th:text="${mealPlan.get(2).name}"/></td>
+            </tr>
+            <tr>
+                <td>WEDNESDAY</td>
+                <td><a th:href="${'/?id=' + 3}"
+                       th:text="${mealPlan.get(3).name}"/></td>
+            </tr>
+            <tr>
+                <td>THURSDAY</td>
+                <td><a th:href="${'/?id=' + 4}"
+                       th:text="${mealPlan.get(4).name}"/></td>
+            </tr>
+            <tr>
+                <td>FRIDAY</td>
+                <td><a th:href="${'/?id=' + 5}"
+                       th:text="${mealPlan.get(5).name}"/></td>
+            </tr>
+            <tr>
+                <td>SATURDAY</td>
+                <td><a th:href="${'/?id=' + 6}"
+                       th:text="${mealPlan.get(6).name}"/></td>
+            </tr>
+            <tr>
+                <td>SUNDAY</td>
+                <td><a th:href="${'/?id=' + 7}"
+                       th:text="${mealPlan.get(7).name}"/></td>
+            </tr>
+            </tbody>
+        </table>
+            <form action="/" method="get" class="getRandom-form">
+                <button type="submit">Get random meals</button>
+            </form>
+    </div>
     <div th:if="${recipe != null}" class="recipe-details">
         <h3>Ingredients</h3>
         <div class="ingredients-list">
