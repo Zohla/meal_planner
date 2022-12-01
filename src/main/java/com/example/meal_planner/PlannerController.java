@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.EnumSet;
+
 @Controller
 public class PlannerController {
 
@@ -21,6 +23,7 @@ public class PlannerController {
   public String mealPlan(@RequestParam(defaultValue = "-1", value = "id") int id, Model model) {
 
     model.addAttribute("mealPlan", mealPlanService.generateWeeklyMenu());
+    model.addAttribute("days", EnumSet.allOf(DaysOfTheWeek.class));
 
     Recipe recipe = id != -1 ? mealPlanService.getRecipeById(id) : null;
     model.addAttribute("recipe", recipe);
