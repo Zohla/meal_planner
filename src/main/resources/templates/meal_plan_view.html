@@ -55,10 +55,10 @@
         </tbody>
     </table>
 
-    <div class="recipe-details">
+    <div th:if="${recipe != null}" class="recipe-details">
         <h3>Ingredients</h3>
         <div class="ingredients-list">
-            <ul th:each="i : ${recipe.getIngredients()}" th:if="${recipe != null}">
+            <ul th:each="i : ${recipe.getIngredients()}">
                 <li th:text="|${i.name}: ${i.amount} ${i.unit}|"></li>
             </ul>
         </div>
