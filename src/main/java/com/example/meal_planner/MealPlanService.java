@@ -1,19 +1,17 @@
 package com.example.meal_planner;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 @Data
 @AllArgsConstructor
 @Service
 public class MealPlanService {
   HashMap<Integer, Recipe> recipes;
-  List<Integer> idList ;
+  List<Integer> idList;
 
   public MealPlanService() {
     recipes = new HashMap<>();
@@ -22,7 +20,7 @@ public class MealPlanService {
     for (int i = 1; i <= 95; i++) {
       recipes.put(i, new Recipe("Recipe " + i));
     }
-    idList = new ArrayList<>(recipes.keySet() );
+    idList = new ArrayList<>(recipes.keySet());
 
   }
 
@@ -31,47 +29,34 @@ public class MealPlanService {
 
     HashMap<Integer, Recipe> thisWeek = new HashMap<>();
 
+    Random random = new Random();
+    Set<Integer> randNum = new HashSet<>();
+
+    while (randNum.size() < 7) {
+
+      int randIndex = random.nextInt(idList.size());
+      randNum.add(idList.get(randIndex));
+
+      for (int id : randNum) {
+        thisWeek.put(id, recipes.get(id));
+      }
+    }
+      return thisWeek;
+  }
+
+    public List<Recipe> replaceRecipe (List < Recipe > recipes,int index){
+      List<Recipe> newList = new ArrayList<>();
       Random random = new Random();
-      int[]numbers = new int[7];
-      for (int i = 0 ; i < numbers.length ; i++) {
-        int randIndex = random.nextInt(idList.size());
-        if(isDublicate(numbers,randIndex) )
-          i--;
-        else
-          numbers[i] = idList.get(randIndex);
-      }
-      for (int i=0;i<numbers.length;i++)
-      {
-        thisWeek.put(numbers[i], recipes.get(numbers[i])) ;
-      }
-
-      return thisWeek ;
-    }
-
-    public boolean isDublicate(int[]numbers, int newNumber)
-    {
-      for(int i=0;i<numbers.length;i++) {
-        if (newNumber == numbers[i])
-          return true;
-      }
-      return false ;
-    }
-
-    public List<Recipe> replaceRecipe(List<Recipe> recipes, int index){
-      List<Recipe> newList = new ArrayList<>() ;
-      Random random = new Random() ;
-      for (int i=0;i<index;i++)
-      {
-        newList.add(recipes.get(i) ) ;
+      for (int i = 0; i < index; i++) {
+        newList.add(recipes.get(i));
       }
       int recipeNumber = random.nextInt(recipes.size());// MÅ SJEKKES FOR DUPLIKAT
-      newList.add(recipes.get(recipeNumber)) ;
-      for (int i=index+1;i<recipes.size();i++)
-      {
-        newList.add(recipes.get(i) ) ;
+      newList.add(recipes.get(recipeNumber));
+      for (int i = index + 1; i < recipes.size(); i++) {
+        newList.add(recipes.get(i));
       }
 
-      return newList ;
+      return newList;
     }
 
   /*  public void createRecipe()
@@ -82,8 +67,10 @@ public class MealPlanService {
       Ingredient ingredient4ForPizza= new Ingredient("pizza saus",50 ,"gram");
 
       String instruction = "Ha deigen på et stekepanne. Fordel sausen på pizzaen. " +
-              "Tilsett ost og pepperoni . Ovnen skal settes på 300 grader. Pizzaen skal stå i 15minutter"
-
+              "Tilsett ost og pepperoni . Ovnen skal settes på 300 grader. Pizzaen skal stå i
+              15minutter"
+   */
+/*
       List<Ingredient> ingredientListForPizza = new ArrayList<>() ;
       ingredientListForPizza.add(ingredient1ForPizza) ;
       ingredientListForPizza.add(ingredient2ForPizza) ;
@@ -95,28 +82,28 @@ public class MealPlanService {
     //  Recipe recipe1 = new Recipe("Pizza",ingredientListForPizza, instruction) ;
     }*/
 
-  // Method to add new recipe to list
-  public void addRecipe(Recipe recipe) {
-    // TODO: check if exists
-    // TODO: get last used id, set current to id + 1
-//    recipes.put(id, recipe);
+    // Method to add new recipe to list
+    public void addRecipe (Recipe recipe){
+      // TODO: check if exists
+      // TODO: get last used id, set current to id + 1
+      //    recipes.put(id, recipe);
+    }
+
+    // Method to get recipe by id
+    public Recipe getRecipeById ( int id){
+      return recipes.get(id);
+    }
+
+    // Pagination
+    public List<Integer> getIdPageSubList ( int page, int pageSize){
+      int from = Math.max(0, page * pageSize);
+      int to = Math.min(idList.size(), (page + 1) * pageSize);
+
+      return idList.subList(from, to);
+    }
+
+    public int numberOfPages ( int pageSize){
+      return (int) Math.ceil((double) recipes.size() / pageSize);
+    }
+
   }
-
-  // Method to get recipe by id
-  public Recipe getRecipeById(int id) {
-    return recipes.get(id);
-  }
-
-  // Pagination
-  public List<Integer> getIdPageSubList(int page, int pageSize) {
-    int from = Math.max(0, page * pageSize);
-    int to = Math.min(idList.size(), (page + 1) * pageSize);
-
-    return idList.subList(from, to);
-  }
-
-  public int numberOfPages(int pageSize) {
-    return (int) Math.ceil((double) recipes.size() / pageSize);
-  }
-
-}
