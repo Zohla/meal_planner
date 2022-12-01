@@ -19,7 +19,7 @@ public class MealPlanService {
     recipes = new HashMap<>();
 
 
-    for (int i = 1; i <= 7; i++) {
+    for (int i = 1; i <= 95; i++) {
       recipes.put(i, new Recipe("Recipe " + i));
     }
     idList = new ArrayList<>(recipes.keySet() );
@@ -76,7 +76,7 @@ public class MealPlanService {
       return newList ;
     }
 
-    public void createRecipe()
+  /*  public void createRecipe()
     {
       Ingredient ingredient1ForPizza= new Ingredient("deig",250,"gram");
       Ingredient ingredient2ForPizza= new Ingredient("ost",300 ,"gram");
@@ -94,8 +94,8 @@ public class MealPlanService {
 
 
 
-      Recipe recipe1 = new Recipe("Pizza",ingredientListForPizza, instruction) ;
-    }
+    //  Recipe recipe1 = new Recipe("Pizza",ingredientListForPizza, instruction) ;
+    }*/
 
   // Method to add new recipe to list
   public void addRecipe(Recipe recipe) {
