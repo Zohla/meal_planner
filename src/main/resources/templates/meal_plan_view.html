@@ -17,40 +17,10 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>MONDAY</td>
-            <td><a th:href="${'/?id=' + 1}"
-                   th:text="${mealPlan.get(1).name}"/></td>
-        </tr>
-        <tr>
-            <td>TUESDAY</td>
-            <td><a th:href="${'/?id=' + 2}"
-                   th:text="${mealPlan.get(2).name}"/></td>
-        </tr>
-        <tr>
-            <td>WEDNESDAY</td>
-            <td><a th:href="${'/?id=' + 3}"
-                   th:text="${mealPlan.get(3).name}"/></td>
-        </tr>
-        <tr>
-            <td>THURSDAY</td>
-            <td><a th:href="${'/?id=' + 4}"
-                   th:text="${mealPlan.get(4).name}"/></td>
-        </tr>
-        <tr>
-            <td>FRIDAY</td>
-            <td><a th:href="${'/?id=' + 5}"
-                   th:text="${mealPlan.get(5).name}"/></td>
-        </tr>
-        <tr>
-            <td>SATURDAY</td>
-            <td><a th:href="${'/?id=' + 6}"
-                   th:text="${mealPlan.get(6).name}"/></td>
-        </tr>
-        <tr>
-            <td>SUNDAY</td>
-            <td><a th:href="${'/?id=' + 7}"
-                   th:text="${mealPlan.get(7).name}"/></td>
+        <tr th:each="instance, iterStat : ${mealPlan}">
+            <td th:text="${days[iterStat.index]}">DAY</td>
+            <td><a th:href="${'/?id=' + instance.key}"
+            th:text="${instance.value.name}"/></td>
         </tr>
         </tbody>
     </table>
