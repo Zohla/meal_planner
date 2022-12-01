@@ -6,53 +6,74 @@
     <title>Recipe database</title>
 </head>
 <body>
-<nav class="site-nav">
-    <ul class="floats">
-        <li><a href="/">Meal plan</a></li>
-        <li><a href="/recipes">Recipes</a></li>
-    </ul>
-</nav>
-<h2>Recipe database</h2>
+<header>
+    <h1>Recipe database</h1>
+    <nav class="site-nav">
+        <ul class="floats">
+            <li><a href="/">Meal plan</a></li>
+            <li><a href="/recipes">Recipes</a></li>
+        </ul>
+    </nav>
+</header>
 
+<div class="recipe-list-view box">
+    <div class="recipe-list-and-pagination box">
+        <div>
+            <table class="recipes-list">
+                <thead>
+                <tr>
+                    <th class="col-name">Recipes</th>
+                </tr>
+                </thead>
 
-<article>
-    <table class="recipes-list">
-        <thead>
-        <tr>
-            <th class="col-name">Recipes</th>
-        </tr>
-        </thead>
+                <tbody>
+                <tr th:each="id : ${ids}">
+                    <td><a th:href="${'/recipes?id=' + id}" th:text="${recipes.get(id).name}"/></td>
+                    </a>
+                </tr>
+                </tbody>
+            </table>
+        </div>
 
-        <tbody>
-        <tr th:each="id : ${ids}">
-            <td> <a th:href="${'/recipe?id=' + id}" th:text="${recipes.get(id).name}"/> </td>
-            </a>
-        </tr>
+        <div class="pagination">
+            <a th:href="('/recipes?page=' + (${currentPage} - 1))"
+               th:if="${currentPage > 0}">&laquo;</a>
 
-        </tbody>
-    </table>
-</article>
+            <div th:each="i: ${#numbers.sequence(0, numberOfPages - 1)}">
 
+                <a th:href="'/recipes?page=' + ${i}"
+                   th:if="${i != currentPage}"
+                   th:text="${i}"></a>
 
-<br><br>
+                <a class="active" href="#"
+                   th:if="${i == currentPage}"
+                   th:text="${i}"></a>
+            </div>
 
-<div class="pagination">
-    <a th:href="('/recipes?page=' + (${currentPage} - 1))"
-       th:if="${currentPage > 0}">&laquo;</a>
-
-    <div th:each="i: ${#numbers.sequence(0, numberOfPages - 1)}">
-
-        <a th:href="'/recipes?page=' + ${i}"
-           th:if="${i != currentPage}"
-           th:text="${i}"></a>
-
-        <a class="active" href="#"
-           th:if="${i == currentPage}"
-           th:text="${i}"></a>
+            <a th:href="('/recipes?page=' + (${currentPage} + 1))"
+               th:if="${currentPage < (numberOfPages - 1)}">&raquo;</a>
+        </div>
     </div>
 
-    <a th:href="('/recipes?page=' + (${currentPage} + 1))"
-       th:if="${currentPage < (numberOfPages - 1)}">&raquo;</a>
+    <div class="recipe-details box" th:if="${recipe != null}">
+        <div>
+            <h3 th:text="${recipe.name}"></h3>
+            <h4>Ingredients</h4>
+            <div class="ingredients-list">
+                <ul th:each="i : ${recipe.getIngredients()}">
+                    <li th:text="|${i.name}: ${i.amount} ${i.unit}|"></li>
+                </ul>
+            </div>
+
+            <h4>Instructions</h4>
+            <p class="recipe-instructions" th:if="${recipe != null}"
+               th:text="${recipe.getInstructions()}"></p>
+        </div>
+    </div>
+
+    <div class="recipe-details box" th:if="${recipe == null}">
+        <h3></h3>
+    </div>
 </div>
 
 </body>

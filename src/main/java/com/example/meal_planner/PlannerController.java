@@ -41,7 +41,9 @@ public class PlannerController {
 
     List<Integer> recipeIds = mealPlanService.getIdPageSubList(page, pageSize);
     int numberOfPages = mealPlanService.numberOfPages(pageSize);
+    Recipe recipe = id != -1 ? mealPlanService.getRecipeById(id) : null;
 
+    model.addAttribute("recipe", recipe);
     model.addAttribute("recipes", mealPlanService.getRecipes());
     model.addAttribute("ids", recipeIds);
     model.addAttribute("currentPage", page);
@@ -50,11 +52,4 @@ public class PlannerController {
     return "recipes_view";
   }
 
-  @GetMapping("/recipe")
-  public String detailView(@RequestParam("id") int id, Model model) {
-
-    Recipe recipe = mealPlanService.getRecipeById(id);
-    model.addAttribute("recipe", recipe);
-    return "recipes_view";
-  }
 }
