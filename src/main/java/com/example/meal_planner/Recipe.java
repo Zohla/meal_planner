@@ -8,13 +8,11 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 public class Recipe {
-  private final int id;
   private String name;
   private List<String> ingredients;
   private String instructions;
 
-  public Recipe(int id, String name) {
-    this.id = id;
+  public Recipe(String name) {
     this.name = name;
   }
 
