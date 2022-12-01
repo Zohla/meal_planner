@@ -11,11 +11,11 @@
     --accent-color-medium: cadetblue;
     --accent-color-light: #bfd9d9;
     --accent-color-xlight: #dfecec;
-    --cream-color: #F8F6F0;
+    --light-color: ivory;
     --important-color: peachpuff;
     --link-color: darkcyan;
     --code-color: #916a08;
-    --nav-link-color: oldlace;
+    --nav-link-color: ivory;
     --nav-background-color: cadetblue;
     --light-text-color: gray;
     --light-gray-color: lightgray;
@@ -26,11 +26,11 @@ html {
     max-width: 90vw;
     margin-left: auto;
     margin-right: auto;
-    background-color: var(--cream-color);
+    background-color: var(--light-color);
 }
 
 body {
-    background-color: var(--cream-color);
+    background-color: var(--light-color);
     font-family: var(--body-font);
     font-size: 90%;
     padding-top: 0;
@@ -51,17 +51,17 @@ body {
 header {
     color: var(--accent-color-dark);
     text-align: center;
-    padding-top: 0;
-    padding-bottom: 20px;
+    padding-top: 100px;
+    margin-bottom: 15px;
+    background-image: url("/food3.png");
+    background-position: center center;
+    box-sizing: border-box;
 }
 
 header h1 {
     font-family: var(--accent-font);
-    padding-top: 10px;
-    font-size: 200%;
-    padding-bottom: 5px;
+    font-size: 400%;
     margin: 0;
-    /*margin-top: 30px;*/
 }
 
 header h4 {
@@ -69,22 +69,42 @@ header h4 {
     padding-bottom: 20px;
 }
 
-header p {
+/* SITE NAVIGATION MENU */
+.site-nav {
+    overflow: hidden;
+    margin-top: 50px;
+    margin-bottom: 0;
+    margin-right: 40px;
+    text-align: right;
+}
+
+.site-nav ul {
     margin: 0;
+    padding: 0;
 }
 
-header img {
-    width: 500px;
-    height: 300px;
-    object-fit: cover;
+.site-nav li {
+    list-style: none;
+    margin-right: 5px;
+    display: inline-block;
 }
 
-/*.banner-image {*/
-/*    width: 100%;*/
-/*    !*background-image: url(http://s30.postimg.org/x0ne0p5wx/bootsrap.png);*!*/
-/*    height: 300px;*/
-/*    background-position: center;*/
-/*}*/
+.site-nav a {
+    display: block;
+    text-decoration: none;
+    padding: 20px 10px;
+    color: var(--accent-color-dark);
+    font-family: var(--accent-font);
+    font-size: x-large;
+}
+
+.site-nav a:hover {
+    color: var(--accent-color-dark)
+}
+
+.site-nav a:active {
+    color: var(--accent-color-dark)
+}
 
 /* HEADINGS */
 
@@ -119,43 +139,6 @@ h4 {
     font-family: var(--accent-font);
     font-size: 110%;
     font-weight: normal;
-}
-
-/* SITE NAVIGATION MENU */
-.site-nav {
-    position: sticky;
-    top: 0;
-    background-color: var(--nav-background-color);
-    overflow: hidden;
-    padding-top: 30px;
-    padding-bottom: 20px;
-    text-align: center;
-}
-
-.site-nav ul {
-    margin: 0;
-    padding: 0;
-}
-
-.site-nav li {
-    list-style: none;
-    display: inline-block;
-}
-
-.site-nav a {
-    text-decoration: none;
-    padding: 20px;
-    color: var(--nav-link-color);
-    font-family: var(--accent-font);
-    font-size: small;
-}
-
-.site-nav a:hover {
-    color: var(--accent-color-dark)
-}
-
-.site-nav a:active {
-    color: var(--accent-color-dark)
 }
 
 
@@ -273,7 +256,7 @@ input[type="submit"] {
     display: block;
     box-sizing: border-box;
     background-color: var(--accent-color-medium);
-    color: var(--cream-color);
+    color: var(--light-color);
     padding: 10px 0;
     border: 1px solid var(--accent-color-medium);
     border-radius: 3px;
@@ -322,23 +305,22 @@ select {
     /*object-fit: cover;*/
 }
 
-/*.meal-plan-view,
-.plan-and-rand-btn-container {
-    display: flex;
-    width: 100%;
-}*/
 /* MEAL PLANNER */
-.meal-plan-view {
+.box {
     display: flex;
     width: 100%;
-    flex-wrap:nowrap;
-    justify-content: space-between;
+    flex-wrap: nowrap;
+    justify-content: left;
     margin: auto;
     box-sizing: border-box;
+}
+
+.meal-plan-view {
     color: var(--accent-color-dark);
     font-family: var(--accent-font);
     font-weight: normal;
 }
+
 .plan-and-rand-btn-container{
     flex-direction: column;
     display: flex;
@@ -346,13 +328,14 @@ select {
 }
 
 .meal-plan-table {
+    margin-top: 20px;
     font-size: 120%;
     max-width: 100%;
-
 }
 
 .recipe-details {
-    max-width: 50%;
+    display: block;
+    margin-top: 0;
 }
 
 .ingredients-list li {
@@ -363,7 +346,17 @@ select {
 }
 
 .recipes-list {
-    max-width: 35%;
+    color: var(--accent-color-dark);
+    font-family: var(--accent-font);
+    font-weight: normal;
+    max-width: 70%;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.recipe-list-and-pagination {
+    flex-wrap: nowrap;
+    flex-direction: column;
 }
 
 /* Pagination links */
@@ -376,8 +369,8 @@ select {
     width: 100%;
     margin: auto;
     box-sizing: border-box;
-    position: fixed;
-    bottom: 100px;
+    /*position: fixed;*/
+    /*bottom: 100px;*/
 }
 .pagination a {
     color: var(--accent-color-dark);
@@ -391,7 +384,7 @@ select {
 /* Style the active/current link */
 .pagination a.active {
     background-color: var(--accent-color-medium);
-    color: var(--cream-color);
+    color: var(--light-color);
 }
 
 /* Add a grey background color on mouse-over */
@@ -409,7 +402,7 @@ table th,
 table tfoot {
     text-align: left;
     background-color: var(--accent-color-dark);
-    color: var(--cream-color);
+    color: var(--light-color);
     font-family: var(--accent-font);
     font-weight: lighter;
 }
@@ -433,7 +426,7 @@ table tbody tr:nth-child(odd) td:not(:nth-child(1)) {
 /* First body column */
 table tbody td:nth-child(1) {
     background-color: var(--accent-color-light);
-    width: 5%;
+    /*width: 5%;*/
 }
 
 table tfoot {
@@ -445,11 +438,11 @@ table td:not(:nth-child(1)),
 table thead th:not(:nth-child(1)) {
     text-align: center;
     vertical-align: top;
-    width: 20%;
+    /*width: 20%;*/
 }
 
 .getRandom-form{
-    background-color: var(--cream-color);
+    background-color: var(--light-color);
     display: flex;
     padding: 30px 30px 30px 0;
 }
