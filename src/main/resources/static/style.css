@@ -11,11 +11,11 @@
     --accent-color-medium: cadetblue;
     --accent-color-light: #bfd9d9;
     --accent-color-xlight: #dfecec;
-    --light-color: ivory;
+    --light-color: #fcfcfc;
     --important-color: peachpuff;
     --link-color: darkcyan;
     --code-color: #916a08;
-    --nav-link-color: ivory;
+    --nav-link-color: #fcfcfc;
     --nav-background-color: cadetblue;
     --light-text-color: gray;
     --light-gray-color: lightgray;
@@ -96,7 +96,7 @@ header h4 {
     text-decoration: none;
     padding: 20px 20px;
     color: var(--accent-color-dark);
-    background-color: rgba(255,255,240,0.6);
+    background-color: rgba(252,252,252,0.8);
     font-family: var(--accent-font);
     border: var(--accent-color-medium) solid 2px;
     border-bottom: none;
@@ -104,7 +104,7 @@ header h4 {
 }
 
 .site-nav a:hover {
-    background-color: rgba(255,255,240,0.8);
+    background-color: rgba(252,252,252,0.8);
 }
 
 .site-nav a:active {
@@ -133,14 +133,14 @@ h2 {
 }
 
 h3 {
-    color: var(--accent-color-dark);
+    color: var(--accent-color-medium);
     font-family: var(--accent-font);
-    font-size: 130%;
+    font-size: 140%;
     font-weight: normal;
 }
 
 h4 {
-    color: var(--accent-color-dark);
+    color: var(--accent-color-medium);
     font-family: var(--accent-font);
     font-size: 110%;
     font-weight: normal;
@@ -349,9 +349,9 @@ select {
     margin-bottom: 15px;
 }
 
-.recipes-list table {
+.recipes-list table tr {
     border: none;
-    color: unset;
+    background-color: unset;
 }
 
 .recipe-list-and-pagination {
@@ -430,6 +430,7 @@ table tbody tr:nth-child(odd) {
     color: var(--accent-color-dark);
     border-width: 1px;
     padding: .5em;
+    position: center;
 }
 .getRandom-form button:hover{
     background-color: var(--accent-color-light);
