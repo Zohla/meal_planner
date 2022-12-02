@@ -16,48 +16,50 @@
         </ul>
     </nav>
 </header>
+<div class="container">
+    <h1>Meal Plan</h1>
+    <div class="meal-plan-view box">
+        <div class="plan-and-rand-btn-container box">
+            <table class="meal-plan-table">
+                <thead>
+                <tr>
+                    <th>DAY</th>
+                    <th>RECIPE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="instance, iterStat : ${mealPlan}" th:if="${mealPlan != null}">
+                    <td th:text="${days[iterStat.index]}">DAY</td>
+                    <td><a th:href="${'/?id=' + instance.key}"
+                           th:text="${instance.value.name}"/></td>
+                </tr>
+                <tr th:each="day: ${days}" th:if="${mealPlan == null}">
+                    <td th:text="${day}">DAY</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+            <form action="/newMealPlan" class="getRandom-form button" method="get">
+                <button type="submit">Get new meal plan!</button>
+            </form>
 
-<div class="meal-plan-view box">
-    <div class="plan-and-rand-btn-container box">
-        <table class="meal-plan-table">
-            <thead>
-            <tr>
-                <th>DAY</th>
-                <th>RECIPE</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:if="${mealPlan != null}" th:each="instance, iterStat : ${mealPlan}">
-                <td th:text="${days[iterStat.index]}">DAY</td>
-                <td><a th:href="${'/?id=' + instance.key}"
-                       th:text="${instance.value.name}"/></td>
-            </tr>
-            <tr th:if="${mealPlan == null}" th:each="day: ${days}">
-                <td th:text="${day}">DAY</td>
-                <td></td>
-            </tr>
-            </tbody>
-        </table>
-        <form action="/newMealPlan" class="getRandom-form button" method="get">
-            <button type="submit">Get new meal plan!</button>
-        </form>
-
-    </div>
-    <div class="recipe-details box" th:if="${recipe != null}">
-        <h3 th:text="${recipe.name}"></h3>
-        <h4>Ingredients</h4>
-        <div class="ingredients-list">
-            <ul th:each="i : ${recipe.getIngredients()}">
-                <li th:text="|${i.name}: ${i.amount} ${i.unit}|"></li>
-            </ul>
         </div>
+        <div class="recipe-details box" th:if="${recipe != null}">
+            <h3 th:text="${recipe.name}"></h3>
+            <h4>Ingredients</h4>
+            <div class="ingredients-list">
+                <ul th:each="i : ${recipe.getIngredients()}">
+                    <li th:text="|${i.name}: ${i.amount} ${i.unit}|"></li>
+                </ul>
+            </div>
 
-        <h4>Instructions</h4>
-        <p class="recipe-instructions" th:if="${recipe != null}"
-           th:utext="${recipe.getInstructions()}"></p>
-    </div>
-    <div class="recipe-details image box" th:if="${recipe == null}">
-        <img th:src="dinnerplate_linedrawing.png" alt="Dinnerplate"/>
+            <h4>Instructions</h4>
+            <p class="recipe-instructions" th:if="${recipe != null}"
+               th:utext="${recipe.getInstructions()}"></p>
+        </div>
+        <div class="recipe-details image box" th:if="${recipe == null}">
+            <img alt="Dinnerplate" th:src="dinnerplate_linedrawing.png"/>
+        </div>
     </div>
 </div>
 </body>
