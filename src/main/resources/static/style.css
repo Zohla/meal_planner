@@ -52,10 +52,11 @@ header {
     color: var(--accent-color-dark);
     text-align: center;
     padding-top: 100px;
-    margin-bottom: 15px;
+    /*margin-bottom: 15px;*/
     background-image: url("/food_banner_transparent.png");
     background-position: center center;
     box-sizing: border-box;
+    border-bottom: var(--accent-color-medium) solid 2px;
 }
 
 header h1 {
@@ -85,25 +86,29 @@ header h4 {
 
 .site-nav li {
     list-style: none;
-    margin-right: 5px;
+    margin-left: 5px;
+    padding: 0;
     display: inline-block;
 }
 
 .site-nav a {
     display: block;
     text-decoration: none;
-    padding: 20px 10px;
+    padding: 20px 20px;
     color: var(--accent-color-dark);
+    background-color: rgba(255,255,240,0.6);
     font-family: var(--accent-font);
+    border: var(--accent-color-medium) solid 2px;
+    border-bottom: none;
     font-size: x-large;
 }
 
 .site-nav a:hover {
-    color: var(--accent-color-dark)
+    background-color: rgba(255,255,240,0.8);
 }
 
 .site-nav a:active {
-    color: var(--accent-color-dark)
+    color: var(--accent-color-light)
 }
 
 /* HEADINGS */
