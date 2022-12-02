@@ -20,11 +20,11 @@
     <div class="recipe-list-and-pagination box">
         <div>
             <table class="recipes-list">
-                <thead>
-                <tr>
-                    <th class="col-name">Recipes</th>
-                </tr>
-                </thead>
+<!--                 <thead> -->
+<!--                 <tr> -->
+<!--                     <th class="col-name">Recipes</th> -->
+<!--                 </tr> -->
+<!--                 </thead> -->
                 <tbody>
                 <tr th:each="id : ${ids}">
                     <td><a th:href="${'/recipes?page=' + currentPage + '&&id=' + id}"
