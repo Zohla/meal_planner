@@ -27,7 +27,8 @@
                 </thead>
                 <tbody>
                 <tr th:each="id : ${ids}">
-                    <td><a th:href="${'/recipes?id=' + id}" th:text="${recipes.get(id).name}"/></td>
+                    <td><a th:href="${'/recipes?page=' + currentPage + '&&id=' + id}"
+                           th:text="${recipes.get(id).name}"/></td>
                 </tr>
                 </tbody>
             </table>
