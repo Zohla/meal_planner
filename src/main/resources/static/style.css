@@ -39,7 +39,7 @@ body {
 
 /* MAIN CONTENT */
 .container {
-    padding: 40px 40px;
+    padding: 10px 40px 40px 60px;
 }
 
 .center-content {
@@ -115,10 +115,11 @@ header h4 {
 
 h1 {
     color: var(--accent-color-dark);
-    font-family: Verdana sans-serif;
-    font-size: 160%;
+    font-family: var(--accent-font);
+    font-size: 200%;
     font-weight: normal;
     text-transform: uppercase;
+    margin-bottom: 0;
 }
 
 h2 {
@@ -170,6 +171,12 @@ a {
 
 img {
     padding: 15px 0;
+    position: center;
+}
+
+.caption {
+    font-size: x-small;
+    color: var(--light-gray-color);
 }
 
 /* Add link icon after link text */
@@ -334,8 +341,17 @@ select {
     margin-top: 0;
 }
 
+.spices {
+    margin-left: 60px;
+}
+
 .recipe-details img {
-    width: 75%;
+    width: 90%;
+    padding-bottom: 0;
+}
+
+.spices img {
+    width: 60%;
     padding-bottom: 0;
 }
 
@@ -440,9 +456,12 @@ table tbody tr:nth-child(odd) {
 .getRandom-form button{
     background-color: var(--accent-color-xlight);
     color: var(--accent-color-dark);
+    font-size: medium;
+    font-style: var(--accent-font);
     border-width: 1px;
     padding: 1em;
     width: 100%;
+    box-sizing: border-box;
 }
 .getRandom-form button:hover{
     background-color: var(--accent-color-light);

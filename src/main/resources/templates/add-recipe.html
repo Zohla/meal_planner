@@ -16,20 +16,22 @@
         </ul>
     </nav>
 </header>
-<h1>Add Recipe</h1>
-<div class="box">
-    <div class="plan-and-rand-btn-container box">
-        <form action="/add" method="post" th:object="${recipe}">
-            <label for="name">Name</label>
-            <input type="text" id="name" th:field="*{name}">
-            <label for="ingredients">Ingredients</label>
-            <p>Add each ingredient on separate line</p>
-            <textarea th:field="*{ingredientsAsString}" id="ingredients"></textarea>
-            <label for="instructions">Instructions</label>
-            <textarea th:field="*{instructions}" id="instructions"></textarea>
-            <button type="submit">Add recipe</button>
-        </form>
-        <p th:text="${success}"></p>
+<div class="container">
+    <h1>Add Recipe</h1>
+    <div class="box">
+        <div class="plan-and-rand-btn-container box">
+            <form action="/add" method="post" th:object="${recipe}">
+                <label for="name">Name</label>
+                <input id="name" th:field="*{name}" type="text">
+                <label for="ingredients">Ingredients</label>
+                <p>Add each ingredient on separate line</p>
+                <textarea id="ingredients" th:field="*{ingredientsAsString}"></textarea>
+                <label for="instructions">Instructions</label>
+                <textarea id="instructions" th:field="*{instructions}"></textarea>
+                <button type="submit">Add recipe</button>
+            </form>
+            <p th:text="${success}"></p>
+        </div>
     </div>
 </div>
 </body>
