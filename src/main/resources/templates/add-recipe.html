@@ -22,11 +22,11 @@
         <form action="/add" method="post" th:object="${recipe}">
             <label for="name">Name</label>
             <input type="text" id="name" th:field="*{name}">
-
-            <!--<p>Add each ingredient on separate line</p>
-            <textarea th:field="*{ingredients}"></textarea>-->
+            <label for="ingredients">Ingredients</label>
+            <p>Add each ingredient on separate line</p>
+            <textarea th:field="*{ingredientsAsString}" id="ingredients"></textarea>
             <label for="instructions">Instructions</label>
-            <textarea th:text="*{instructions}" id="instructions"></textarea>
+            <textarea th:field="*{instructions}" id="instructions"></textarea>
             <button type="submit">Add recipe</button>
         </form>
         <p th:text="${success}"></p>
