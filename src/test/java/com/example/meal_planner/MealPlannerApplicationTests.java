@@ -9,11 +9,15 @@ class MealPlannerApplicationTests {
 
 
 
-	@Test
+	/*@Test
 	void contextLoads() {
 	}
 
+	}*/
 
-
-
+	@Test
+	public void isDublicate() {
+		int [] array1 = {1,2,3,4,5,6,7} ;
+		Assert.assertTrue(MealPlanService.isDublicate(array1,8) );
+		Assert.assertTrue(Methods.isPrimeNumber(97));
 	}

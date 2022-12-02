@@ -65,6 +65,15 @@ public class RecipeDatabase {
         Ingredient ingredient6= new Ingredient("revet ost",1,"dl");
         Ingredient ingredient7= new Ingredient("tortillalafse",1,"stor");
 
+        ingredientList.add(ingredient1) ;
+        ingredientList.add(ingredient2) ;
+        ingredientList.add(ingredient3) ;
+        ingredientList.add(ingredient4) ;
+        ingredientList.add(ingredient5) ;
+        ingredientList.add(ingredient6) ;
+        ingredientList.add(ingredient7) ;
+
+
 
         String instruction = "1. Knekk egg i en bolle og visp lett sammen. Krydre med litt salt og pepper.<br>" +
 
