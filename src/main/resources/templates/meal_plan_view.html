@@ -22,20 +22,24 @@
         <table class="meal-plan-table">
             <thead>
             <tr>
-                <th>Day</th>
-                <th>Recipe</th>
+                <th>DAY</th>
+                <th>RECIPE</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="instance, iterStat : ${mealPlan}">
+            <tr th:if="${mealPlan != null}" th:each="instance, iterStat : ${mealPlan}">
                 <td th:text="${days[iterStat.index]}">DAY</td>
                 <td><a th:href="${'/?id=' + instance.key}"
                        th:text="${instance.value.name}"/></td>
             </tr>
+            <tr th:if="${mealPlan == null}" th:each="day: ${days}">
+                <td th:text="${day}">DAY</td>
+                <td></td>
+            </tr>
             </tbody>
         </table>
-        <form action="/" class="getRandom-form button" method="get">
-            <button type="submit">Get random meals</button>
+        <form action="/newMealPlan" class="getRandom-form button" method="get">
+            <button type="submit">Get new meal plan!</button>
         </form>
 
     </div>

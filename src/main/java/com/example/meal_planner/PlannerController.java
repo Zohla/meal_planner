@@ -1,5 +1,6 @@
 package com.example.meal_planner;
 
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.EnumSet;
+import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -23,15 +25,26 @@ public class PlannerController {
 
 
   @GetMapping("/")
-  public String mealPlan(@RequestParam(defaultValue = "-1", value = "id") int id, Model model) {
+  public String mealPlan(@RequestParam(defaultValue = "-1", value = "id") int id, Model model,
+                         HttpSession session) {
 
-    model.addAttribute("mealPlan", mealPlanService.generateWeeklyMenu());
+    HashMap<Integer, Recipe> mealPlan = (HashMap<Integer, Recipe>) session.getAttribute("mealPlan");
+
+    model.addAttribute("mealPlan", mealPlan);
     model.addAttribute("days", EnumSet.allOf(DaysOfTheWeek.class));
 
     Recipe recipe = id != -1 ? mealPlanService.getRecipeById(id) : null;
     model.addAttribute("recipe", recipe);
 
     return "meal_plan_view";
+  }
+
+  @GetMapping("/newMealPlan")
+  public String generateMenu(Model model, HttpSession session) {
+
+    session.setAttribute("mealPlan", mealPlanService.generateWeeklyMenu());
+
+    return "redirect:/";
   }
 
   // Recipes pagination
