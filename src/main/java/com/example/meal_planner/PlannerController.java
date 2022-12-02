@@ -33,8 +33,6 @@ public class PlannerController {
   }
 
   // Recipes pagination
-
-
   @GetMapping("/recipes")
   public String displayPage(@RequestParam(defaultValue = "0", value = "page") int page,
                             @RequestParam(defaultValue = "0", value = "id") int id, Model model) {
