@@ -94,13 +94,13 @@ header h4 {
 .site-nav a {
     display: block;
     text-decoration: none;
-    padding: 20px 20px;
+    padding: 15px 20px;
     color: var(--accent-color-dark);
     background-color: rgba(252,252,252,0.8);
     font-family: var(--accent-font);
     border: var(--accent-color-medium) solid 2px;
     border-bottom: none;
-    font-size: x-large;
+    font-size: large;
 }
 
 .site-nav a:hover {
@@ -331,6 +331,16 @@ select {
 .recipe-details {
     display: block;
     margin-top: 0;
+}
+
+.recipe-details img {
+    width: 75%;
+    padding-bottom: 0;
+}
+
+.caption {
+    font-size: x-small;
+    margin-top: 2px;
 }
 
 .ingredients-list li {

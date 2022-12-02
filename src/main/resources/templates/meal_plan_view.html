@@ -52,8 +52,8 @@
         <p class="recipe-instructions" th:if="${recipe != null}"
            th:utext="${recipe.getInstructions()}"></p>
     </div>
-    <div class="recipe-details box" th:if="${recipe == null}">
-        <h3></h3>
+    <div class="recipe-details image box" th:if="${recipe == null}">
+        <img th:src="dinnerplate_linedrawing.png" alt="Dinnerplate"/>
     </div>
 </div>
 </body>
