@@ -11,11 +11,11 @@
     --accent-color-medium: cadetblue;
     --accent-color-light: #bfd9d9;
     --accent-color-xlight: #dfecec;
-    --light-color: ivory;
+    --light-color: #fcfcfc;
     --important-color: peachpuff;
     --link-color: darkcyan;
     --code-color: #916a08;
-    --nav-link-color: ivory;
+    --nav-link-color: #fcfcfc;
     --nav-background-color: cadetblue;
     --light-text-color: gray;
     --light-gray-color: lightgray;
@@ -52,7 +52,7 @@ header {
     color: var(--accent-color-dark);
     text-align: center;
     padding-top: 100px;
-    /*margin-bottom: 15px;*/
+    margin-bottom: 15px;
     background-image: url("/food_banner_transparent.png");
     background-position: center center;
     box-sizing: border-box;
@@ -96,7 +96,7 @@ header h4 {
     text-decoration: none;
     padding: 20px 20px;
     color: var(--accent-color-dark);
-    background-color: rgba(255,255,240,0.6);
+    background-color: rgba(252,252,252,0.8);
     font-family: var(--accent-font);
     border: var(--accent-color-medium) solid 2px;
     border-bottom: none;
@@ -104,7 +104,7 @@ header h4 {
 }
 
 .site-nav a:hover {
-    background-color: rgba(255,255,240,0.8);
+    background-color: rgba(252,252,252,0.8);
 }
 
 .site-nav a:active {
@@ -133,14 +133,14 @@ h2 {
 }
 
 h3 {
-    color: var(--accent-color-dark);
+    color: var(--accent-color-medium);
     font-family: var(--accent-font);
-    font-size: 130%;
+    font-size: 140%;
     font-weight: normal;
 }
 
 h4 {
-    color: var(--accent-color-dark);
+    color: var(--accent-color-medium);
     font-family: var(--accent-font);
     font-size: 110%;
     font-weight: normal;
@@ -291,23 +291,12 @@ select {
     padding: 10px 5px;
     margin: 10px 0;
     outline: none;
-    /* Remove rounded corners */
-    /*-webkit-border-radius: 0;*/
-    /*border-radius: 0;*/
-    /*-webkit-appearance: none;*/
 }
 
 .checkbox-text {
     font-family: var(--body-font);
     font-size: small;
     color: var(--accent-color-medium);
-}
-
-/* CLASSES */
-.full-width-image {
-    max-width: 100%;
-    max-height: 100%;
-    /*object-fit: cover;*/
 }
 
 /* MEAL PLANNER */
@@ -327,6 +316,7 @@ select {
 }
 
 .plan-and-rand-btn-container{
+    margin-top: 0;
     flex-direction: column;
     display: flex;
     width: 100%;
@@ -359,13 +349,18 @@ select {
     margin-bottom: 15px;
 }
 
+.recipes-list table tr {
+    border: none;
+    background-color: unset;
+}
+
 .recipe-list-and-pagination {
+    margin-top: 0;
     flex-wrap: nowrap;
     flex-direction: column;
 }
 
 /* Pagination links */
-
 .pagination {
     display: flex;
     flex-wrap: wrap; /* dynamically wrap elements */
@@ -374,8 +369,6 @@ select {
     width: 100%;
     margin: auto;
     box-sizing: border-box;
-    /*position: fixed;*/
-    /*bottom: 100px;*/
 }
 .pagination a {
     color: var(--accent-color-dark);
@@ -399,14 +392,13 @@ select {
 table {
     border-spacing: 0;
     border-collapse: collapse;
-    width: 70%;
-    /*table-layout: fixed;*/
+    width: 75%;
 }
 
 table th,
 table tfoot {
     text-align: left;
-    background-color: var(--accent-color-dark);
+    background-color: var(--accent-color-medium);
     color: var(--light-color);
     font-family: var(--accent-font);
     font-weight: lighter;
@@ -419,31 +411,13 @@ table td {
 }
 
 /*  Even body rows except 1st col */
-table tbody tr:nth-child(even) td:not(:nth-child(1)) {
+table tbody tr:nth-child(even) {
     background-color: var(--accent-color-xlight);
 }
 
-/*  Odd body rows except 1st col */
-table tbody tr:nth-child(odd) td:not(:nth-child(1)) {
+/*  Odd body rows */
+table tbody tr:nth-child(odd) {
     background-color: var(--accent-color-light);
-}
-
-/* First body column */
-table tbody td:nth-child(1) {
-    background-color: var(--accent-color-light);
-    /*width: 5%;*/
-}
-
-table tfoot {
-    background-color: var(--accent-color-medium);
-}
-
-/* All but first column */
-table td:not(:nth-child(1)),
-table thead th:not(:nth-child(1)) {
-    text-align: center;
-    vertical-align: top;
-    /*width: 20%;*/
 }
 
 .getRandom-form{
@@ -456,6 +430,7 @@ table thead th:not(:nth-child(1)) {
     color: var(--accent-color-dark);
     border-width: 1px;
     padding: .5em;
+    position: center;
 }
 .getRandom-form button:hover{
     background-color: var(--accent-color-light);
