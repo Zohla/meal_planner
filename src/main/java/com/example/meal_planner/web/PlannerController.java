@@ -1,5 +1,9 @@
-package com.example.meal_planner;
+package com.example.meal_planner.web;
 
+import com.example.meal_planner.DaysOfTheWeek;
+import com.example.meal_planner.MealPlanService;
+import com.example.meal_planner.Recipe;
+import com.example.meal_planner.UserRecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +19,8 @@ import java.util.List;
 public class PlannerController {
   private final int pageSize = 10; // Number of elements per currentPage
   public final MealPlanService mealPlanService;
+  UserRecipeService userRecipeService = new UserRecipeService();
+
 
   @Autowired
   public PlannerController(MealPlanService mealPlanService) {
@@ -60,10 +66,9 @@ public class PlannerController {
   @PostMapping("/add")
   public String addNewRecipe(@ModelAttribute Recipe r, Model model){
     model.addAttribute(new Recipe());
-    UserRecipe userRecipe = new UserRecipe();
-    userRecipe.convertInputToRecipe(r);
+    Recipe formattedRecipe = userRecipeService.convertInputToRecipe(r);
+    mealPlanService.addRecipe(formattedRecipe);
     model.addAttribute("success", "Recipe is added!");
     return "add-recipe";
   }
-
 }
