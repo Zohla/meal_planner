@@ -23,10 +23,10 @@
 }
 
 html {
-    max-width: 90vw;
+    max-width: 80vw;
     margin-left: auto;
     margin-right: auto;
-    background-color: var(--light-color);
+    background-color: var(--accent-color-dark);
 }
 
 body {
@@ -39,7 +39,7 @@ body {
 
 /* MAIN CONTENT */
 .container {
-    padding: 100px 40px;
+    padding: 40px 40px;
 }
 
 .center-content {
