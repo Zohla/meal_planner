@@ -23,10 +23,10 @@
 }
 
 html {
-    max-width: 90vw;
+    max-width: 80vw;
     margin-left: auto;
     margin-right: auto;
-    background-color: var(--light-color);
+    background-color: var(--accent-color-dark);
 }
 
 body {
@@ -39,7 +39,7 @@ body {
 
 /* MAIN CONTENT */
 .container {
-    padding: 100px 40px;
+    padding: 10px 40px 40px 60px;
 }
 
 .center-content {
@@ -94,13 +94,13 @@ header h4 {
 .site-nav a {
     display: block;
     text-decoration: none;
-    padding: 20px 20px;
+    padding: 15px 20px;
     color: var(--accent-color-dark);
     background-color: rgba(252,252,252,0.8);
     font-family: var(--accent-font);
     border: var(--accent-color-medium) solid 2px;
     border-bottom: none;
-    font-size: x-large;
+    font-size: large;
 }
 
 .site-nav a:hover {
@@ -115,10 +115,11 @@ header h4 {
 
 h1 {
     color: var(--accent-color-dark);
-    font-family: Verdana sans-serif;
-    font-size: 160%;
+    font-family: var(--accent-font);
+    font-size: 200%;
     font-weight: normal;
     text-transform: uppercase;
+    margin-bottom: 0;
 }
 
 h2 {
@@ -170,6 +171,12 @@ a {
 
 img {
     padding: 15px 0;
+    position: center;
+}
+
+.caption {
+    font-size: x-small;
+    color: var(--light-gray-color);
 }
 
 /* Add link icon after link text */
@@ -319,6 +326,7 @@ select {
     margin-top: 0;
     flex-direction: column;
     display: flex;
+    position: center;
     width: 100%;
 }
 
@@ -331,6 +339,20 @@ select {
 .recipe-details {
     display: block;
     margin-top: 0;
+}
+
+.spices {
+    margin-left: 60px;
+}
+
+.recipe-details img {
+    width: 90%;
+    padding-bottom: 0;
+}
+
+.spices img {
+    width: 60%;
+    padding-bottom: 0;
 }
 
 .ingredients-list li {
@@ -410,7 +432,12 @@ table td {
     padding: 10px;
 }
 
-/*  Even body rows except 1st col */
+/* First body column */
+table tbody td:nth-child(1) {
+    width: 100px;
+}
+
+/*  Even body rows */
 table tbody tr:nth-child(even) {
     background-color: var(--accent-color-xlight);
 }
@@ -423,14 +450,18 @@ table tbody tr:nth-child(odd) {
 .getRandom-form{
     background-color: var(--light-color);
     display: flex;
-    padding: 30px 30px 30px 0;
+    padding: 30px 0;
+    position: center;
 }
 .getRandom-form button{
     background-color: var(--accent-color-xlight);
     color: var(--accent-color-dark);
+    font-size: medium;
+    font-style: var(--accent-font);
     border-width: 1px;
-    padding: .5em;
-    position: center;
+    padding: 1em;
+    width: 100%;
+    box-sizing: border-box;
 }
 .getRandom-form button:hover{
     background-color: var(--accent-color-light);

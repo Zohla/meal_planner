@@ -79,7 +79,7 @@ public class RecipeDatabase {
 
               "3. Brett en tortillalefse utover en liten ildfast form og ha i eggeblandingen. Topp med resten av osten.<br>" +
 
-              "4. Dekk formen med aluminiumsfolie og stek i ovnen på 175 grader i ca. 20 minutter. <br>";
+              "4. Dekk formen med aluminiumsfolie og stek i ovnen på 175 grader i ca. 20 minutter. ";
 
         return  new Recipe("Omelett i ovn",ingredientList, instruction) ;
 
