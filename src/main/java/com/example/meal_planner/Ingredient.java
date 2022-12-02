@@ -9,4 +9,8 @@ public class Ingredient {
   private String name;
   private double amount;
   private String unit;
+
+  public Ingredient(String name) {
+    this.name = name;
+  }
 }
