@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.EnumSet;
@@ -50,6 +52,22 @@ public class PlannerController {
     model.addAttribute("numberOfPages", numberOfPages);
 
     return "recipes_view";
+  }
+  @GetMapping("/add")
+  public String showForm(Model model){
+    UserRecipe r = new UserRecipe();
+    model.addAttribute("recipe", r);
+    model.addAttribute("success", "");
+    return "add-recipe";
+  }
+  @PostMapping("/add")
+  public String addNewRecipe(@ModelAttribute UserRecipe r, Model model){
+   /* System.out.println(r.getIngredients());*/
+    System.out.println(r.getName());
+    System.out.println(r.getInstructions());
+    model.addAttribute("success", "Recipe is added!");
+   /* Recipe recipe = new Recipe(r.getName(),)*/
+    return "add-recipe";
   }
 
 }

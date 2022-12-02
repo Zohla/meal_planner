@@ -12,9 +12,12 @@ public class Recipe {
   private List<String> ingredients;
   private String instructions;
 
+  private String ingredientsAsString;
+
   public Recipe(String name) {
     this.name = name;
   }
+
 
   public List<Ingredient> getIngredients() {
     return List.of(
@@ -27,14 +30,7 @@ public class Recipe {
   }
 
   public String getInstructions() {
-    return """
-           Add all ingredients to bowl
-           
-           Mix well
-           
-           Add to 30 cm round baking tray
-           
-           Bake in oven at 200 deg C for 40 min.
-           """;
+    return instructions;
   }
+
 }

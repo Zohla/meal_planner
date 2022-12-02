@@ -5,6 +5,9 @@
     --accent-font: Verdana, sans-serif;
     --code-font: EnvyCodeR, monospace;
 
+    /*FONT SIZES*/
+    --large:120%;
+
 
     /* COLORS */
     --accent-color-dark: darkslategray;
@@ -20,6 +23,8 @@
     --light-text-color: gray;
     --light-gray-color: lightgray;
     --error-color: #800000;
+
+
 }
 
 html {
@@ -319,6 +324,7 @@ select {
     color: var(--accent-color-dark);
     font-family: var(--accent-font);
     font-weight: normal;
+
 }
 
 .plan-and-rand-btn-container{
@@ -329,7 +335,6 @@ select {
 
 .meal-plan-table {
     margin-top: 20px;
-    font-size: 120%;
     max-width: 100%;
 }
 
@@ -358,7 +363,9 @@ select {
     flex-wrap: nowrap;
     flex-direction: column;
 }
-
+table{
+    font-size: var(--large);
+}
 /* Pagination links */
 
 .pagination {

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{style.css}"/>
+    <title>Meal plan</title>
+</head>
+<body>
+<header>
+    <h1>Weekly Meal Planner</h1>
+    <nav class="site-nav">
+        <ul class="floats">
+            <li><a href="/">Meal plan</a></li>
+            <li><a href="/recipes">Recipes</a></li>
+            <li><a href="/add-recipe">Recipes</a></li>
+        </ul>
+    </nav>
+</header>
+<h1>Add Recipe</h1>
+<div class="box">
+    <div class="plan-and-rand-btn-container box">
+        <form action="/add" method="post" th:object="${recipe}">
+            <label for="name">Name</label>
+            <input type="text" id="name" th:field="*{name}">
+
+            <!--<p>Add each ingredient on separate line</p>
+            <textarea th:field="*{ingredients}"></textarea>-->
+            <label for="instructions">Instructions</label>
+            <textarea th:text="*{instructions}" id="instructions"></textarea>
+            <button type="submit">Add recipe</button>
+        </form>
+        <p th:text="${success}"></p>
+    </div>
+</div>
+</body>
+</html>
