@@ -9,28 +9,27 @@ import java.util.List;
 @AllArgsConstructor
 public class Recipe {
   private String name;
-  private List<String> ingredients;
+  private List<Ingredient> ingredients;
+  private  String ingredientsAsString;
   private String instructions;
-
-  private String ingredientsAsString;
 
   public Recipe(String name) {
     this.name = name;
   }
+  public Recipe(String name, List<Ingredient> ingredients, String instructions ){
+    this.name = name;
+    this.ingredients = ingredients;
+    this.instructions = instructions;
+  }
 
+  public Recipe() {
+  }
 
   public List<Ingredient> getIngredients() {
-    return List.of(
-            new Ingredient("flour", 350, "g"),
-            new Ingredient("eggs", 3, "pc"),
-            new Ingredient("milk", 2, "dl"),
-            new Ingredient("butter", 100, "g"),
-            new Ingredient("sugar", 1,"dl")
-                  );
+    return ingredients ;
   }
 
   public String getInstructions() {
     return instructions;
   }
-
 }
