@@ -55,18 +55,16 @@ public class PlannerController {
   }
   @GetMapping("/add")
   public String showForm(Model model){
-    UserRecipe r = new UserRecipe();
-    model.addAttribute("recipe", r);
+    model.addAttribute("recipe", new Recipe());
     model.addAttribute("success", "");
     return "add-recipe";
   }
   @PostMapping("/add")
-  public String addNewRecipe(@ModelAttribute UserRecipe r, Model model){
-   /* System.out.println(r.getIngredients());*/
-    System.out.println(r.getName());
-    System.out.println(r.getInstructions());
+  public String addNewRecipe(@ModelAttribute Recipe r, Model model){
+    model.addAttribute(new Recipe());
+    UserRecipe userRecipe = new UserRecipe();
+    userRecipe.convertInputToRecipe(r);
     model.addAttribute("success", "Recipe is added!");
-   /* Recipe recipe = new Recipe(r.getName(),)*/
     return "add-recipe";
   }
 
