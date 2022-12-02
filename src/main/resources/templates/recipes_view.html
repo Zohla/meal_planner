@@ -67,7 +67,7 @@
 
             <h4>Instructions</h4>
             <p class="recipe-instructions" th:if="${recipe != null}"
-               th:text="${recipe.getInstructions()}"></p>
+               th:utext="${recipe.getInstructions()}"></p>
         </div>
     </div>
 

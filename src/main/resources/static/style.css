@@ -319,6 +319,7 @@ select {
     margin-top: 0;
     flex-direction: column;
     display: flex;
+    position: center;
     width: 100%;
 }
 
@@ -336,11 +337,6 @@ select {
 .recipe-details img {
     width: 75%;
     padding-bottom: 0;
-}
-
-.caption {
-    font-size: x-small;
-    margin-top: 2px;
 }
 
 .ingredients-list li {
@@ -420,7 +416,12 @@ table td {
     padding: 10px;
 }
 
-/*  Even body rows except 1st col */
+/* First body column */
+table tbody td:nth-child(1) {
+    width: 100px;
+}
+
+/*  Even body rows */
 table tbody tr:nth-child(even) {
     background-color: var(--accent-color-xlight);
 }
@@ -433,14 +434,15 @@ table tbody tr:nth-child(odd) {
 .getRandom-form{
     background-color: var(--light-color);
     display: flex;
-    padding: 30px 30px 30px 0;
+    padding: 30px 0;
+    position: center;
 }
 .getRandom-form button{
     background-color: var(--accent-color-xlight);
     color: var(--accent-color-dark);
     border-width: 1px;
-    padding: .5em;
-    position: center;
+    padding: 1em;
+    width: 100%;
 }
 .getRandom-form button:hover{
     background-color: var(--accent-color-light);
