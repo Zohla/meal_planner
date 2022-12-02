@@ -25,11 +25,10 @@
                     <th class="col-name">Recipes</th>
                 </tr>
                 </thead>
-
                 <tbody>
                 <tr th:each="id : ${ids}">
-                    <td><a th:href="${'/recipes?id=' + id}" th:text="${recipes.get(id).name}"/></td>
-                    </a>
+                    <td><a th:href="${'/recipes?page=' + currentPage + '&&id=' + id}"
+                           th:text="${recipes.get(id).name}"/></td>
                 </tr>
                 </tbody>
             </table>
@@ -43,11 +42,11 @@
 
                 <a th:href="'/recipes?page=' + ${i}"
                    th:if="${i != currentPage}"
-                   th:text="${i}"></a>
+                   th:text="${i + 1}"></a>
 
                 <a class="active" href="#"
                    th:if="${i == currentPage}"
-                   th:text="${i}"></a>
+                   th:text="${i + 1}"></a>
             </div>
 
             <a th:href="('/recipes?page=' + (${currentPage} + 1))"
@@ -71,6 +70,7 @@
         </div>
     </div>
 
+<!--     Placeholder to keep layout when no recipe is shown -->
     <div class="recipe-details box" th:if="${recipe == null}">
         <h3></h3>
     </div>
