@@ -75,11 +75,11 @@ public class RecipeDatabase {
 
 
 
-        String instruction = "1. Knekk egg i en bolle og visp lett sammen. Krydre med litt salt og pepper." +
+        String instruction = "1. Knekk egg i en bolle og visp lett sammen. Krydre med litt salt og pepper.<br>" +
 
-              "2. Kutt paprika i små biter. Ha paprika, skinke, svarte bønner og halvparten av osten i bollen med egg og rør sammen." +
+              "2. Kutt paprika i små biter. Ha paprika, skinke, svarte bønner og halvparten av osten i bollen med egg og rør sammen.<br>" +
 
-              "3. Brett en tortillalefse utover en liten ildfast form og ha i eggeblandingen. Topp med resten av osten." +
+              "3. Brett en tortillalefse utover en liten ildfast form og ha i eggeblandingen. Topp med resten av osten.<br>" +
 
               "4. Dekk formen med aluminiumsfolie og stek i ovnen på 175 grader i ca. 20 minutter. ";
 
@@ -108,13 +108,12 @@ public class RecipeDatabase {
 
               1. Legg svinekammen i en ildfast form og krydre med pepper.<br>
 
-              2.
-              Skrell og del gulrot og løk i grove biter og legg dem rundt svinekammen sammen med timian.<br>
+              2.Skrell og del gulrot og løk i grove biter og legg dem rundt svinekammen sammen med timian.<br>
 
-              Hell vannet i formen.<br>
+              3.Hell vannet i formen.<br>
 
 
-              3. Sett formen midt i forvarmet ovn på 125 °C. Stikk et steketermometer inn i den tykkeste delen av kjøttet. Pass på at det ikke hviler mot bein. Kjøttet er ferdig når termometeret viser 68-72 °C. Dette tar 2 1/2 - 3 timer, avhengig av tykkelsen på kjøttet.""";
+              4. Sett formen midt i forvarmet ovn på 125 °C. Stikk et steketermometer inn i den tykkeste delen av kjøttet. Pass på at det ikke hviler mot bein. Kjøttet er ferdig når termometeret viser 68-72 °C. Dette tar 2 1/2 - 3 timer, avhengig av tykkelsen på kjøttet.""";
         return new Recipe("Svinekam",ingredientList, instruction) ;
     }
     public Recipe polsegryte()
