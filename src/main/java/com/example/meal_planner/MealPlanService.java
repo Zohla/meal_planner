@@ -96,10 +96,8 @@ public class MealPlanService {
       for (int i = index + 1; i < recipes.size(); i++) {
         newList.add(recipes.get(i));
       }
-
       return newList;
     }
-
 
     // Method to add new recipe to list
     public void addRecipe(Recipe recipe){
