@@ -5,13 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 
 public class RecipeDatabase {
-    HashMap<Integer, Recipe> recipes;
+    HashMap<Integer, Recipe> recipes = new HashMap<>();
     List<Integer> idList;
 
 
     public RecipeDatabase() {
-        recipes = new HashMap<>();
-
 
         recipes.put(1,pizza() ) ;
         recipes.put(2,svinecarret() ) ;
