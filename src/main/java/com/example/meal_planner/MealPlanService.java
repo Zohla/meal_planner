@@ -20,11 +20,11 @@ public class MealPlanService {
     recipes = database.getAllRecipes() ;
 
 
-    idList = new ArrayList<>(recipes.keySet());
   }
 
   // Method to generate list of 7 random recipes
   public HashMap<Integer, Recipe> generateWeeklyMenu() {
+    idList = new ArrayList<>(recipes.keySet());
 
     HashMap<Integer, Recipe> thisWeek = new HashMap<>();
 
@@ -102,11 +102,12 @@ public class MealPlanService {
 
 
     // Method to add new recipe to list
-    public void addRecipe (Recipe recipe){
+    public void addRecipe(Recipe recipe){
       // TODO: check if exists
-      // TODO: get last used id, set current to id + 1
-      //    recipes.put(id, recipe);
-    }
+     // System.out.println(recipes.size());
+      int key = recipes.size();
+      recipes.put((key+1),recipe);
+}
 
     // Method to get recipe by id
     public Recipe getRecipeById ( int id){
