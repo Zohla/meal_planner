@@ -106,13 +106,12 @@ public class RecipeDatabase {
 
               1. Legg svinekammen i en ildfast form og krydre med pepper.<br>
 
-              2.
-              Skrell og del gulrot og løk i grove biter og legg dem rundt svinekammen sammen med timian.<br>
+              2.Skrell og del gulrot og løk i grove biter og legg dem rundt svinekammen sammen med timian.<br>
 
-              Hell vannet i formen.<br>
+              3.Hell vannet i formen.<br>
 
 
-              3. Sett formen midt i forvarmet ovn på 125 °C. Stikk et steketermometer inn i den tykkeste delen av kjøttet. Pass på at det ikke hviler mot bein. Kjøttet er ferdig når termometeret viser 68-72 °C. Dette tar 2 1/2 - 3 timer, avhengig av tykkelsen på kjøttet.""";
+              4. Sett formen midt i forvarmet ovn på 125 °C. Stikk et steketermometer inn i den tykkeste delen av kjøttet. Pass på at det ikke hviler mot bein. Kjøttet er ferdig når termometeret viser 68-72 °C. Dette tar 2 1/2 - 3 timer, avhengig av tykkelsen på kjøttet.""";
         return new Recipe("Svinekam",ingredientList, instruction) ;
     }
     public Recipe polsegryte()
@@ -154,7 +153,7 @@ public class RecipeDatabase {
 
               6. Ha i erter helt til slutt. Da får de akkurat nok varme, uten å miste den fine grønnfargen sin.""";
 
-        return new Recipe("Lammekoteletter i form",ingredientList, instruction) ;
+        return new Recipe("Pølsegryte",ingredientList, instruction) ;
     }
     public Recipe lammekoteletter()
     {
@@ -229,11 +228,11 @@ public class RecipeDatabase {
         ingredientList.add(ingredient6) ;
 
         String instruction = """
-              5. Hakk bladpersille. Bland bladpersillen inn i kjøttdeigen og form burgere, uten å jobbe for mye med deigen. Krydre burgerne med salt og pepper.
+              1. Hakk bladpersille. Bland bladpersillen inn i kjøttdeigen og form burgere, uten å jobbe for mye med deigen. Krydre burgerne med salt og pepper.
 
-              6. Stek burgere i en stekepanne med smør eller olje. Bruk sterk varme og stek på den ene siden til det pipler ut kjøttsaft. Snu burgerne og stek videre på den andre siden til det igjen pipler ut kjøttsaft. Da er burgerne medium stekt. Skru ned varmen, og legg et par osteskiver på hver burger. Legg på et lokk til osten har smeltet.
+              2. Stek burgere i en stekepanne med smør eller olje. Bruk sterk varme og stek på den ene siden til det pipler ut kjøttsaft. Snu burgerne og stek videre på den andre siden til det igjen pipler ut kjøttsaft. Da er burgerne medium stekt. Skru ned varmen, og legg et par osteskiver på hver burger. Legg på et lokk til osten har smeltet.
 
-              7. Varm hamburgerbrød raskt i stekepannen, eller som anvist på pakken. Kutt eple i tynne skiver. Smør på aioli, legg på babyspinat, epleskiver, hamburger og topp med baconmarmelade.""";
+              3. Varm hamburgerbrød raskt i stekepannen, eller som anvist på pakken. Kutt eple i tynne skiver. Smør på aioli, legg på babyspinat, epleskiver, hamburger og topp med baconmarmelade.""";
 
         return new Recipe("Burger med baconmarmolade",ingredientList, instruction) ;
 
@@ -471,7 +470,7 @@ public class RecipeDatabase {
         ingredientListForPizza.add(ingredient9ForPizza) ;
 
         String instruction = """
-            SLIK GJØR DU<br>
+            
             Forvarm ovnen til 220 °C.
              Knus einebær i en morter til det er finmalt.
             Rør snøfrisk og einebær sammen, og smør utover pizzabunnen .
